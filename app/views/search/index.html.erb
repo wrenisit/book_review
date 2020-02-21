@@ -2,6 +2,9 @@
 <% @book["author_name"].each do |author| %>
   <h2><%= author %></h2>
 <% end %>
+<% @book["subject"].each do |subject| %>
+  <h5><%= subject %></h5>
+<% end %>s
 <section class="reviews">
   <% @reviews.each do |review| %>
     <section class="review"
