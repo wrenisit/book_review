@@ -1,12 +1,12 @@
-<%= @book["title"] %>
+<h1><%= @book["title"] %></h1>
 <% @book["author_name"].each do |author| %>
-  <%= author %>
+  <h2><%= author %></h2>
 <% end %>
 <section class="reviews">
   <% @reviews.each do |review| %>
     <section class="review"
-      <h3>Review: <%= review["summary"] %>
-      <h4>Review Publication Date: <%= review["publication_dt"] %></h4>
+      <p>Review: <%= review["summary"] %></p>
+      <h5>Review Publication Date: <%= review["publication_dt"] %></h5>
     </section>
   <% end %>
 </section>
