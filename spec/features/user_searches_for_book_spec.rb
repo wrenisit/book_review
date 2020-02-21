@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe('User can visit the welcome page') do
   it('can book search') do
+    review1 = ("experiments with time travel, history and the endless complications of love.")
     visit root_path
     expect(page).to have_content("Search for a Book")
     fill_in :title, with: "the man who saw everything"
@@ -10,9 +11,9 @@ describe('User can visit the welcome page') do
     expect(page).to have_content("The Man Who Saw Everything")
     expect(page).to have_content("Deborah Levy")
     within(".reviews") do
-      expect()
+      expect(page).to have_css(".review", count:2)
+      expect(page).to have_content(review1)
     end
-
   end
 end
 # As a user
@@ -27,7 +28,7 @@ end
 # - Author
 # - Genres
 # (Note: genres is referred to as "subjects" in the book search response)
-# I should also see:
+# I should alsso see:
 # - This book has 2 reviews from the New York Times
 #   (Note: reviews are the "summary" in the book review response)
 # - Review 1: ""The Man Who Saw Everything,"" which was longlisted for the Booker Prize, looks at masculinity through the perspective of a young historian who sneers at "authoritarian old men.""

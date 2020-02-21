@@ -5,8 +5,8 @@
 <section class="reviews">
   <% @reviews.each do |review| %>
     <section class="review"
-      <%= review["summary"] %>
-      <%= review["byline"] %>
+      <h3>Review: <%= review["summary"] %>
+      <h4>Review Publication Date: <%= review["publication_dt"] %></h4>
     </section>
   <% end %>
 </section>
